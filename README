@@ -1,0 +1,10 @@
+The DisputeResolution contract allows users to submit disputes and resolve them through the contract.
+Each dispute is assigned a unique ID, and the contract maintains the submitter's and respondent's addresses, description of the dispute, and the status.
+
+The submitDispute function allows users to submit a new dispute by providing the respondent's address and a description of the dispute as parameters.
+It increments the disputeCount and adds the new dispute to the disputes mapping.
+
+The resolveDispute function allows the parties involved in a dispute (submitter and respondent) to resolve the dispute by providing the dispute ID and the desired status (DisputeStatus) as parameters.
+It checks that the dispute is in the "Pending" status and updates the status accordingly.
+
+The onlyParties modifier is used to restrict certain functions (like resolveDispute) to be accessible only by the submitter or the respondent of the dispute.
